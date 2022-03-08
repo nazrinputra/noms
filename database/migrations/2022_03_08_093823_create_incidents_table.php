@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
+            $table->string('subject');
+            $table->string('description');
+            $table->string('fault_category');
+            $table->string('product_name');
             $table->timestamps();
         });
     }

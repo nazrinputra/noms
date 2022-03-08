@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Incident extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'subject',
+        'description',
+        'fault_category',
+        'product_name',
+    ];
 }
