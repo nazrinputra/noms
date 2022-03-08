@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Incident;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreIncidentRequest;
 use App\Http\Requests\UpdateIncidentRequest;
 
@@ -15,7 +16,8 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        return view('incidents.index');
+        $incidents = DB::table('incidents')->paginate(5);
+        return view('incidents.index', ['incidents' => $incidents]);
     }
 
     /**

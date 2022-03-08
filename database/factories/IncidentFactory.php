@@ -17,10 +17,10 @@ class IncidentFactory extends Factory
     public function definition()
     {
         return [
-            'subject' => $this->faker->text(),
-            'description' => $this->faker->text(),
-            'fault_category' => $this->faker->text(),
-            'product_name' => $this->faker->name(),
+            'subject' => $this->faker->words(3, true),
+            'description' => $this->faker->words(7, true),
+            'fault_category' => $this->faker->words(2, true),
+            'product_name' => $this->faker->words(1, true),
         ];
     }
 }
