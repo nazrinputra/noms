@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Incident;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class IncidentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Incident::factory(10)->create();
     }
 }
