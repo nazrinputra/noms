@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreIncidentRequest extends FormRequest
@@ -13,7 +14,7 @@ class StoreIncidentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -24,7 +25,10 @@ class StoreIncidentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'subject' => 'required|string',
+            'description' => 'required|string',
+            'category' => 'required|string',
+            'product' => 'required|string',
         ];
     }
 }

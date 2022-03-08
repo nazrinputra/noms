@@ -19,8 +19,8 @@ class IncidentFactory extends Factory
         return [
             'subject' => $this->faker->words(3, true),
             'description' => $this->faker->words(7, true),
-            'fault_category' => $this->faker->words(2, true),
-            'product_name' => $this->faker->words(1, true),
+            'category' => $this->faker->words(2, true),
+            'product' => $this->faker->words(1, true),
         ];
     }
 }

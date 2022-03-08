@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('subject');
             $table->string('description');
-            $table->string('fault_category');
-            $table->string('product_name');
+            $table->string('category');
+            $table->string('product');
             $table->timestamps();
         });
     }

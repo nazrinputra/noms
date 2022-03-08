@@ -12,7 +12,7 @@ class Incident extends Model
     protected $fillable = [
         'subject',
         'description',
-        'fault_category',
-        'product_name',
+        'category',
+        'product',
     ];
 }

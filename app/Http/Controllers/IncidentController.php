@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Incident;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreIncidentRequest;
 use App\Http\Requests\UpdateIncidentRequest;
 
@@ -16,7 +17,7 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        $incidents = DB::table('incidents')->paginate(5);
+        $incidents = DB::table('incidents')->paginate(10);
         return view('incidents.index', ['incidents' => $incidents]);
     }
 
@@ -38,7 +39,8 @@ class IncidentController extends Controller
      */
     public function store(StoreIncidentRequest $request)
     {
-        //
+        $incident = Incident::create($request->validated());
+        return Redirect::route('incidents.show', $incident);
     }
 
     /**
@@ -49,7 +51,7 @@ class IncidentController extends Controller
      */
     public function show(Incident $incident)
     {
-        return view('incidents.show');
+        return view('incidents.show', ['incident' => $incident]);
     }
 
     /**
@@ -60,7 +62,7 @@ class IncidentController extends Controller
      */
     public function edit(Incident $incident)
     {
-        return view('incidents.edit');
+        return view('incidents.edit', ['incident' => $incident]);
     }
 
     /**
@@ -72,7 +74,8 @@ class IncidentController extends Controller
      */
     public function update(UpdateIncidentRequest $request, Incident $incident)
     {
-        //
+        $newIncident = $incident->update($request->validated());
+        return Redirect::route('incidents.show', $newIncident);
     }
 
     /**

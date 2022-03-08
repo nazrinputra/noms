@@ -15,6 +15,6 @@ class IncidentSeeder extends Seeder
      */
     public function run()
     {
-        Incident::factory(50)->create();
+        Incident::factory(25)->create();
     }
 }

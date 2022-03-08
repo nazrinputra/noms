@@ -29,10 +29,10 @@
                                         Description</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Fault Category</th>
+                                        Category</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Product Name</th>
+                                        Product</th>
                                     <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit</span>
                                     </th>
@@ -49,11 +49,11 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
                                         $incident->description }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $incident->fault_category }}</td>
+                                        $incident->category }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $incident->product_name }}</td>
+                                        $incident->product }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('incidents.show') }}"
+                                        <a href="{{ route('incidents.show', $incident->id) }}"
                                             class="text-indigo-600 hover:text-indigo-900">View</a>
                                     </td>
                                 </tr>
