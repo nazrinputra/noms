@@ -29,6 +29,11 @@
                         {{ __('Assets') }}
                     </x-nav-link>
                     @endif
+                    @if (Auth::user()->hasPermissionTo('users module'))
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 

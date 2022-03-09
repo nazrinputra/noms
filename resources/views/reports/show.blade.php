@@ -107,12 +107,14 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
                                         $note->user->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        @if (Auth::user()->id == $note->user->id)
                                         <form action="{{ route('notes.destroy', $note) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
                                                 class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">Delete</button>
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach

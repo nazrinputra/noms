@@ -79,19 +79,19 @@
                     </div>
                     @endif
 
-                    @if (Auth::user()->hasPermissionTo('roles module'))
+                    @if (Auth::user()->hasPermissionTo('users module'))
                     <div
                         class="mt-3 flex justify-between p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <div>
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                Roles
+                                Users
                                 Module</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                This is the module to view, create and edit roles
+                                This is the module to view, create and edit users
                             </p>
                         </div>
                         <div class="py-3 inline-flex rounded-md shadow">
-                            <a href="#"
+                            <a href="{{ route('users.index') }}"
                                 class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                                 View Module </a>
                         </div>
