@@ -42,6 +42,14 @@
                                 {{ $report->customer->name }} </a>
                         </dd>
                     </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Asset</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <a href="{{ route('customers.show', $report->customer) }}"
+                                class="inline-flex items-center justify-center px-5 py-3 text-xs border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                {{ $report->asset->asset_name }} </a>
+                        </dd>
+                    </div>
                 </dl>
             </div>
             <div class="flex justify-between px-4 py-5 sm:px-6">

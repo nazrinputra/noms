@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('reference_no');
-            $table->string('title');
-            $table->foreignId('customer_id');
-            $table->foreignId('incident_id');
-            $table->foreignId('asset_id');
+            $table->string('asset_name');
+            $table->string('product_type');
+            $table->string('service_id');
+            $table->string('account_name');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('assets');
     }
 };

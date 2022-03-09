@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\AssetSeeder;
 use Database\Seeders\ReportSeeder;
 use Database\Seeders\CustomerSeeder;
 use Database\Seeders\IncidentSeeder;
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             IncidentSeeder::class,
             CustomerSeeder::class,
+            AssetSeeder::class,
             ReportSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,

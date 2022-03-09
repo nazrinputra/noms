@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Asset;
 use App\Models\Customer;
 use App\Models\Incident;
 use Illuminate\Database\Eloquent\Model;
@@ -26,5 +27,10 @@ class Report extends Model
     public function incident()
     {
         return $this->belongsTo(Incident::class);
+    }
+
+    public function asset()
+    {
+        return $this->belongsTo(Asset::class);
     }
 }
