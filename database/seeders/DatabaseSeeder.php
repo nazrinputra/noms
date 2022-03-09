@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\NoteSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\AssetSeeder;
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
             ReportSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
+            NoteSeeder::class,
         ]);
     }
 }

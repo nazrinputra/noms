@@ -67,5 +67,84 @@
                 </div>
             </div>
         </div>
+
+        <div class="flex flex-col mt-3">
+            <div class="px-4 py-5 sm:px-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Notes</h3>
+                <p class="mt-1 max-w-2xl text-sm text-gray-500">Progress tracking for this report inserted by users.
+                </p>
+            </div>
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                        <table class="w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                                <tr>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Type</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Remarks</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        User</th>
+                                    <th scope="col" class="relative px-6 py-3">
+                                        <span class="sr-only">Edit</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                @foreach ($report->notes as $note)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            {{ $note->type }}
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
+                                        $note->remarks }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
+                                        $note->user->name }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <form action="{{ route('notes.destroy', $note) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                <form action="{{ route('notes.store') }}" method="POST">
+                                    @csrf
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <input type="text" name="type" id="type"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <input type="text" name="remarks" id="remarks"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ Auth::user()->name }}
+                                            <input type="hidden" name="user_id" id="user_id"
+                                                value="{{ Auth::user()->id }}">
+                                            <input type="hidden" name="report_id" id="report_id"
+                                                value="{{ $report->id }}">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <button type="submit"
+                                                class="px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Save</button>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </x-app-layout>
