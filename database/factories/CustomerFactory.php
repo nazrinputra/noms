@@ -18,7 +18,7 @@ class CustomerFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'phone_no' => $this->faker->randomNumber(9),
+            'phone_no' => 01 . $this->faker->randomNumber(8, true),
             'email' => $this->faker->email(),
             'address' => $this->faker->address(),
         ];
