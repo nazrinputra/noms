@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\CustomerSeeder;
 use Database\Seeders\IncidentSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             IncidentSeeder::class,
+            CustomerSeeder::class
         ]);
     }
 }
