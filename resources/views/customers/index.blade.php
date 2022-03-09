@@ -26,7 +26,7 @@
                                         Name</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Phone No</th>
+                                        Service No</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Email</th>
@@ -47,7 +47,7 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $customer->phone_no }}</td>
+                                        $customer->service_no }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
                                         $customer->email }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{

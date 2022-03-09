@@ -33,10 +33,10 @@
 
                                 <div class="grid grid-cols-3 gap-6">
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="phone_no" class="block text-sm font-medium text-gray-700">Phone
+                                        <label for="service_no" class="block text-sm font-medium text-gray-700">Service
                                             No</label>
-                                        <input type="number" name="phone_no" id="phone_no"
-                                            value="{{ $customer->phone_no }}"
+                                        <input type="number" name="service_no" id="service_no"
+                                            value="{{ $customer->service_no }}"
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                 </div>
