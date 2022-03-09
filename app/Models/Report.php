@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Note;
 use App\Models\Asset;
 use App\Models\Customer;
 use App\Models\Incident;
@@ -32,5 +33,10 @@ class Report extends Model
     public function asset()
     {
         return $this->belongsTo(Asset::class);
+    }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }

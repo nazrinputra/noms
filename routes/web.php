@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\IncidentController;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('assets', AssetController::class)->except('delete');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::resource('notes', NoteController::class)->only(['store', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';
