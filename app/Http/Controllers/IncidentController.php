@@ -74,8 +74,8 @@ class IncidentController extends Controller
      */
     public function update(UpdateIncidentRequest $request, Incident $incident)
     {
-        $newIncident = $incident->update($request->validated());
-        return Redirect::route('incidents.show', $newIncident);
+        $incident->update($request->validated());
+        return Redirect::route('incidents.show', $incident);
     }
 
     /**
