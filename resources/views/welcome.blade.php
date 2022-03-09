@@ -7,7 +7,7 @@
 
     <title>Laravel</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body class="antialiased">
