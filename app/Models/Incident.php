@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Report;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Incident extends Model
 {
@@ -15,4 +16,9 @@ class Incident extends Model
         'category',
         'product',
     ];
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
 }

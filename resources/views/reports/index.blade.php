@@ -2,10 +2,10 @@
     <x-slot name="header">
         <div class="flex justify-between">
             <h2 class="d-flex justify-content-start font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Customers') }}
+                {{ __('Reports') }}
             </h2>
             <div class="inline-flex rounded-md shadow">
-                <a href="{{ route('customers.create') }}"
+                <a href="{{ route('reports.create') }}"
                     class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                     Add </a>
             </div>
@@ -23,37 +23,37 @@
                                 <tr>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Name</th>
+                                        Reference No</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Phone No</th>
+                                        Title</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Email</th>
+                                        Customer</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left dark:text-white text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Address</th>
+                                        Incident</th>
                                     <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit</span>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach ($customers as $customer)
+                                @foreach ($reports as $report)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            {{ $customer->name }}
+                                            {{ $report->reference_no }}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $customer->phone_no }}</td>
+                                        $report->customer->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $customer->email }}</td>
+                                        $report->title }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{
-                                        $customer->address }}</td>
+                                        $report->incident->subject }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('customers.show', $customer->id) }}"
+                                        <a href="{{ route('reports.show', $report->id) }}"
                                             class="text-indigo-600 hover:text-indigo-900">View</a>
                                     </td>
                                 </tr>
@@ -62,7 +62,7 @@
                         </table>
                     </div>
 
-                    {{ $customers->links() }}
+                    {{ $reports->links() }}
                 </div>
             </div>
         </div>
