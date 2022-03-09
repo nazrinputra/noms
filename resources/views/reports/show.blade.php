@@ -51,9 +51,11 @@
                         Back </a>
                 </div>
                 <div class="inline-flex rounded-md shadow">
+                    @if (Auth::user()->hasPermissionTo('reports module'))
                     <a href="{{ route('reports.edit', $report) }}"
                         class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                         Edit </a>
+                    @endif
                 </div>
             </div>
         </div>

@@ -18,12 +18,14 @@
                     <x-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.index')">
                         {{ __('Reports') }}
                     </x-nav-link>
+                    @if (Auth::user()->hasPermissionTo('reports module'))
                     <x-nav-link :href="route('incidents.index')" :active="request()->routeIs('incidents.index')">
                         {{ __('Incidents') }}
                     </x-nav-link>
                     <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.index')">
                         {{ __('Customers') }}
                     </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -85,12 +87,14 @@
             <x-responsive-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.index')">
                 {{ __('Reports') }}
             </x-responsive-nav-link>
+            @if (Auth::user()->hasPermissionTo('reports module'))
             <x-responsive-nav-link :href="route('incidents.index')" :active="request()->routeIs('incidents.index')">
                 {{ __('Incidents') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.index')">
                 {{ __('Customers') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
