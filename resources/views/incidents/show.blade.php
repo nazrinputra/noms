@@ -47,7 +47,7 @@
             </div>
             <div class="bg-gray-50 flex justify-between px-4 py-5 sm:px-6">
                 <div class="ml-3 inline-flex rounded-md shadow">
-                    <a href="{{ route('incidents.index') }}"
+                    <a href="{{ url()->previous() }}"
                         class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
                         Back </a>
                 </div>
