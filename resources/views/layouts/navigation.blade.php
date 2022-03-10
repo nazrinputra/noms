@@ -106,6 +106,11 @@
                 {{ __('Assets') }}
             </x-responsive-nav-link>
             @endcan
+            @can('users module')
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                {{ __('Users') }}
+            </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
