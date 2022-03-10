@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
@@ -17,8 +16,18 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = DB::table('customers')->paginate(10);
-        return view('customers.index', ['customers' => $customers]);
+        $search = request()->query('search');
+
+        if ($search) {
+            $customers = Customer::where('name', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
+        } else {
+            $customers = Customer::all()->paginate(10);
+        }
+
+        return view('customers.index', [
+            'customers' => $customers,
+            'search' => $search,
+        ]);
     }
 
     /**

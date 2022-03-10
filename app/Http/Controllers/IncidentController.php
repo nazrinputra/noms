@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Incident;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreIncidentRequest;
 use App\Http\Requests\UpdateIncidentRequest;
@@ -17,8 +16,17 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        $incidents = DB::table('incidents')->paginate(10);
-        return view('incidents.index', ['incidents' => $incidents]);
+        $search = request()->query('search');
+
+        if ($search) {
+            $incidents = Incident::where('subject', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
+        } else {
+            $incidents = Incident::all()->paginate(10);
+        }
+        return view('incidents.index', [
+            'incidents' => $incidents,
+            'search' => $search,
+        ]);
     }
 
     /**

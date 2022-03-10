@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asset;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreAssetRequest;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\UpdateAssetRequest;
@@ -17,8 +16,18 @@ class AssetController extends Controller
      */
     public function index()
     {
-        $assets = DB::table('assets')->paginate(10);
-        return view('assets.index', ['assets' => $assets]);
+        $search = request()->query('search');
+
+        if ($search) {
+            $assets = Asset::where('asset_name', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
+        } else {
+            $assets = Asset::all()->paginate(10);
+        }
+
+        return view('assets.index', [
+            'assets' => $assets,
+            'search' => $search,
+        ]);
     }
 
     /**

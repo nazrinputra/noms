@@ -17,11 +17,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->paginate(10);
         $roles = Role::all();
+        $search = request()->query('search');
+
+        if ($search) {
+            $users = User::where('name', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
+        } else {
+            $users = User::all()->paginate(10);
+        }
+
         return view('users.index', [
             'users' => $users,
             'roles' => $roles,
+            'search' => $search,
         ]);
     }
 

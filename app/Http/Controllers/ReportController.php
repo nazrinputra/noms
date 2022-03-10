@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use App\Models\Customer;
 use App\Models\Incident;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
@@ -19,8 +18,18 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::all()->paginate(10);
-        return view('reports.index', ['reports' => $reports]);
+        $search = request()->query('search');
+
+        if ($search) {
+            $reports = Report::where('reference_no', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
+        } else {
+            $reports = Report::all()->paginate(10);
+        }
+
+        return view('reports.index', [
+            'reports' => $reports,
+            'search' => $search,
+        ]);
     }
 
     /**
