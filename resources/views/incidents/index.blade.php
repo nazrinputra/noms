@@ -13,7 +13,6 @@
     </x-slot>
 
     <div class="p-6">
-        <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -39,7 +38,7 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach ($incidents as $incident)
+                                @forelse ($incidents as $incident)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -57,7 +56,13 @@
                                             class="text-indigo-600 hover:text-indigo-900">View</a>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="5" style="text-align:center; padding-top: 1rem; padding-bottom: 1rem;">
+                                        There is no data to display here
+                                    </td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
