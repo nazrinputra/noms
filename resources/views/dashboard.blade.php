@@ -26,7 +26,7 @@
                         </div>
                     </div>
 
-                    @if (Auth::user()->hasPermissionTo('reports module'))
+                    @can ('reports module')
                     <div
                         class="mt-3 flex justify-between p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <div>
@@ -77,9 +77,9 @@
                                 View Module </a>
                         </div>
                     </div>
-                    @endif
+                    @endcan
 
-                    @if (Auth::user()->hasPermissionTo('users module'))
+                    @can('users module')
                     <div
                         class="mt-3 flex justify-between p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <div>
@@ -96,7 +96,7 @@
                                 View Module </a>
                         </div>
                     </div>
-                    @endif
+                    @endcan
                 </div>
             </div>
         </div>

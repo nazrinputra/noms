@@ -67,6 +67,18 @@
                                         @endforeach
                                     </select>
                                 </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="asset_id" class="block text-sm font-medium text-gray-700">Asset</label>
+                                    <select id="asset_id" name="asset_id"
+                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        @foreach ($assets as $asset)
+                                        <option value="{{ $asset->id }}" @if ($report->asset_id == $asset->id)
+                                            selected
+                                            @endif>{{ $asset->asset_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <div class="p-6 flex rounded-md shadow justify-between">
                                 <div class="ml-3 inline-flex rounded-md shadow">
@@ -84,3 +96,4 @@
         </div>
     </div>
 </x-app-layout>
+

@@ -29,6 +29,7 @@ class UpdateReportRequest extends FormRequest
             'reference_no' => 'required|string',
             'incident_id' => 'required|integer',
             'customer_id' => 'required|integer',
+            'asset_id' => 'required|integer',
         ];
     }
 }

@@ -8,6 +8,7 @@ use App\Models\Incident;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
+use App\Models\Asset;
 
 class ReportController extends Controller
 {
@@ -41,9 +42,11 @@ class ReportController extends Controller
     {
         $incidents = Incident::all();
         $customers = Customer::all();
+        $assets = Asset::all();
         return view('reports.create', [
             'incidents' => $incidents,
             'customers' => $customers,
+            'assets' => $assets,
         ]);
     }
 
@@ -80,11 +83,13 @@ class ReportController extends Controller
     {
         $incidents = Incident::all();
         $customers = Customer::all();
+        $assets = Asset::all();
 
         return view('reports.edit', [
             'report' => $report,
             'incidents' => $incidents,
             'customers' => $customers,
+            'assets' => $assets,
         ]);
     }
 

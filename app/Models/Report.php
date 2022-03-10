@@ -17,7 +17,8 @@ class Report extends Model
         'title',
         'reference_no',
         'incident_id',
-        'customer_id'
+        'customer_id',
+        'asset_id'
     ];
 
     public function customer()
