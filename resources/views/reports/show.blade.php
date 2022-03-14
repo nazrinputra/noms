@@ -9,10 +9,20 @@
 
     <div class="p-6">
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-            <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">Report Information</h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Details about the report that is stored in the system.
-                </p>
+            <div class="flex justify-between px-4 py-5 sm:px-6">
+                <div>
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Report Information</h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">Details about the report that is stored in the
+                        system.
+                    </p>
+                </div>
+                <div class="inline-flex rounded-md shadow">
+                    @can ('reports module')
+                    <a href="{{ route('reports.edit', $report) }}"
+                        class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        Edit </a>
+                    @endcan
+                </div>
             </div>
 
             <div class="border-t border-gray-200">
@@ -139,18 +149,11 @@
                     </div>
                 </dl>
             </div>
-            <div class="bg-gray-50 flex justify-between px-4 py-5 sm:px-6">
+            <div class="bg-gray-50 flex justify-left px-4 py-5 sm:px-6">
                 <div class="ml-3 inline-flex rounded-md shadow">
                     <a href="{{ url()->previous() }}"
                         class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
                         Back </a>
-                </div>
-                <div class="inline-flex rounded-md shadow">
-                    @can ('reports module')
-                    <a href="{{ route('reports.edit', $report) }}"
-                        class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-                        Edit </a>
-                    @endcan
                 </div>
             </div>
         </div>
