@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('remarks');
-            $table->foreignId('user_id');
-            $table->foreignId('report_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('report_id')->constrained();
             $table->timestamps();
         });
     }

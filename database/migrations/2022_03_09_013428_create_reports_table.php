@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('reference_no');
             $table->string('title');
-            $table->foreignId('customer_id');
-            $table->foreignId('incident_id');
-            $table->foreignId('asset_id');
+            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('incident_id')->constrained();
+            $table->foreignId('asset_id')->constrained();
             $table->timestamps();
         });
     }
