@@ -47,9 +47,8 @@
                     <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">A better
                         way to
                         track reports</p>
-                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Lorem ipsum dolor sit amet consect
-                        adipisicing
-                        elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Don’t overestimate or be too optimistic
+                        while reporting, any report is a good report.</p>
                 </div>
 
                 <div class="mt-10">
@@ -68,10 +67,10 @@
                                 <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Always ready for work
                                 </p>
                             </dt>
-                            <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing
-                                elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-                                ratione.</dd>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Work orders are the engine of our system.
+                                There are millions of engines in the world, from
+                                rusted duds to high-powered studsbut not all can run as smooth as a
+                                luxury sports car.</dd>
                         </div>
 
                         <div class="relative">
@@ -88,10 +87,9 @@
                                 <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Progress updates from
                                     technicals and vendors</p>
                             </dt>
-                            <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing
-                                elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-                                ratione.</dd>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">It can be easy to overcompensate and end up
+                                getting too detailed in your reports. Establish what people want to know and
+                                share only that.</dd>
                         </div>
 
                         <div class="relative">
@@ -108,10 +106,9 @@
                                 <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Instantly view any report
                                     details</p>
                             </dt>
-                            <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing
-                                elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-                                ratione.</dd>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Faster, easier and more compact. All progress
+                                updates from technicals and vendors are easier to find. The reports structure is much
+                                cleaner and allow for easier viewing.</dd>
                         </div>
 
                         <div class="relative">
@@ -128,10 +125,10 @@
                                 <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Secure access to the system
                                     via internet</p>
                             </dt>
-                            <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing
-                                elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-                                ratione.</dd>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">HTTPS (Hypertext Transfer Protocol Secure) is
+                                an internet
+                                communication protocol that protects the integrity and
+                                confidentiality of data between the user's computer and the site.</dd>
                         </div>
                     </dl>
                 </div>
