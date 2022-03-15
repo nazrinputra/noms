@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('reports', ReportController::class)->except('destroy');
+    Route::resource('reports', ReportController::class);
 });
 
 Route::middleware('auth')->group(function () {
