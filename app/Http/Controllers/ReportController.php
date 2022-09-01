@@ -19,12 +19,10 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $search = request()->query('search');
-
-        if ($search) {
-            $reports = Report::where('reference_no', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
-        } else {
+        if (!$search = request()->query('search')) {
             $reports = Report::all()->paginate(10);
+        } else {
+            $reports = Report::where('reference_no', 'LIKE', "%{$search}%")->paginate(10)->withQueryString();
         }
 
         return view('reports.index', [
@@ -70,7 +68,9 @@ class ReportController extends Controller
      */
     public function show(Report $report)
     {
-        return view('reports.show', ['report' => $report]);
+        return view('reports.show', [
+            'report' => $report
+        ]);
     }
 
     /**
